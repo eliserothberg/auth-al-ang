@@ -1,0 +1,190 @@
+@import "../../colors";
+
+main {
+  flex: 1;
+}
+
+section, aside {
+  display: block;
+  margin: 0;
+}
+
+.flex-container {
+  @media screen and (min-width: 640px){
+    display: flex;
+  }
+}
+
+.form-control {
+  border: 1px solid $blue !important;
+  height: 3.214em;
+  border-radius: 3px;
+  padding-left: 10px;
+  margin: 5px 0;
+  width: 97%;
+  background: rgba(94, 80, 249, 0.10) !important;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+
+#log-in {
+  min-height: 600px;
+  margin-top: calc(20vh - 80px) !important;
+  .login-img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+
+autofill:hover,
+.form-control:focus,
+.form-control:hover,
+.form-control:active {
+  border: 1px solid $dodger-blue !important;
+}
+
+#login-section {
+  min-width: 270px;
+  margin: 20px 20px 0 20px;
+  max-width: 800px;
+  height: calc(100vh - 75px);
+  min-height: 580px;
+  @media screen and (min-width: 369px) {
+  }
+  @media screen and (min-width: 640px) {
+    //height: calc(100vh - 100px);
+    margin: 20px 40px 0 40px;
+    width: 42vw;
+    max-width: 400px;
+  }
+  @media screen and (min-width: 700px) {
+    margin: 30px 25px 0 25px;
+  }
+  @media screen and (min-width: 900px) {
+    min-width: 400px;
+    max-width: 600px;
+    margin: 40px 40px 0 40px;
+  }
+}
+
+#Login-logo-box {
+  margin-top: 10vh;
+  height: 250px;
+}
+
+#login-logo {
+  background-image: url('../../assets/images/instream-white-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 175px;
+  background-size: 55%;
+}
+
+#login-footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 2em;
+  padding: 0 10px;
+  //margin-top: 25px;
+  //height: 50px;
+  @media screen and (min-width: 421px) {
+    font-size: 2vw;
+    padding: 0;
+  }
+  @media screen and (min-width: 630px) {
+    font-size: 1.5em;
+  }
+  @media screen and (min-width: 900px) {
+    font-size: 1em;
+  }
+}
+
+.footer-logo {
+  width: auto;
+  height: 25px;
+}
+
+#login-sidebar {
+  height: 0;
+  width: 0;
+  @media screen and (min-width: 630px) {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+#login-img-div {
+  @media screen and (min-width: 640px)    {
+    background-image: url('../../assets/images/man-laptop.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+  }
+}
+
+.outline-btn {
+  cursor: pointer;
+  background: $white;
+  padding: 5px;
+  border-radius: 50px;
+  width: 95px;
+  height: 90px;
+  border: 1px solid rgba(94, 80, 249, 0.05);
+}
+
+.outline-btn:hover,
+.outline-btn:focus,
+.outline-btn:active {
+  background: $blue-quarter-tone;
+}
+
+.no-login {
+  font-size: .75em;
+  cursor: pointer;
+  padding: 0 5px;
+  //margin-top: 5px;
+  @media screen and (min-width: 322px) {
+    font-size: .9em;
+  }
+  @media screen and (min-width: 369px) {
+    font-size: .75em;
+    //padding: 0;
+  }
+  @media screen and (min-width: 414px) {
+    font-size: .9em;
+    padding: 0 5px;
+  }
+  @media screen and (min-width: 640px) {
+    padding: 0;
+  }
+  @media screen and (min-width: 760px) {
+    padding: 0 5px;
+  }
+}
+
+input {
+  background-color: rgba(94, 80, 249, 0.05);
+}
+
+#loader {
+  text-align: center;
+}
+
+#instream-link {
+  padding: 8px 20px;
+  @media screen and (min-width: 370px) {
+    padding: 10px;
+  }
+}
