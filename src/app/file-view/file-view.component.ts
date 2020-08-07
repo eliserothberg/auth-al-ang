@@ -17,7 +17,7 @@
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlfrescoApiService } from '@alfresco/adf-core';
+import {AlfrescoApiService, NodesApiService} from '@alfresco/adf-core';
 // import { MatSnackBar } from '@angular/material';
 
 @Component({
@@ -33,14 +33,21 @@ export class FileViewComponent implements OnInit {
     constructor(private router: Router,
                 private route: ActivatedRoute,
                 // private snackBar: MatSnackBar,
-                private apiService: AlfrescoApiService) {
+                private apiService: AlfrescoApiService,
+                private nodesApi: NodesApiService) {
     }
 
     ngOnInit() {
-
         this.route.params.subscribe(params => {
             const id = params.nodeId;
             if (id) {
+                this.nodesApi.getNode(id)
+                    .subscribe(
+                        (node) => {
+                            console.log(node.properties);
+                        },
+                        error => { console.log("Ouch, an error happened!"); }
+                    );
                 this.apiService.getInstance().nodes.getNodeInfo(id).then(
                     (node) => {
                         if (node) {

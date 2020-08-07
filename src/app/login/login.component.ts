@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import {AuthenticationService} from '../_services';
+import {faLock, faUser} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'login',
@@ -15,7 +16,10 @@ export class LoginComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error = '';
-  public persistSignIn = false;
+  userIcon = faUser;
+  lockIcon = faLock;
+
+  public persistSignIn: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -65,6 +69,13 @@ export class LoginComponent implements OnInit {
           this.error = error;
           this.loading = false;
         });
+  }
+
+  persistingSignIn(target) {
+    this.persistSignIn = target.value;
+    console.log('persist = ' + this.persistSignIn);
+    console.log(target);
+
   }
 
   forgotPassword() {

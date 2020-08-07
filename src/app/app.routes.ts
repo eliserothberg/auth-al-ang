@@ -9,9 +9,10 @@ import { FileViewComponent } from './file-view/file-view.component';
 import {AdminComponent} from './admin/admin.component';
 import {AuthGuard} from './_guards/auth.guard';
 import {Role} from './_models';
+import {DatatableComponent} from './datatable/datatable.component';
 
 export const appRoutes: Routes = [
-  { path: 'files/:nodeId/view', component: FileViewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
+  { path: 'files/:nodeId/view', component: FileViewComponent, canActivate: [AuthGuard], outlet: 'overlay' },
   {
     path: '',
     component: AppLayoutComponent,
@@ -35,6 +36,10 @@ export const appRoutes: Routes = [
         path: 'documentlist',
         component: DocumentlistComponent,
         canActivate: [AuthGuardEcm]
+      },
+      {
+        path: 'datatable',
+        component: DatatableComponent
       },
     ]
   },
