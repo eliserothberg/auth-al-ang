@@ -40,6 +40,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ErrorInterceptor, fakeBackendProvider, JwtInterceptor} from './_helpers';
 import {AdminComponent} from './admin/admin.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -60,11 +61,12 @@ registerLocaleData(localeSv);
 
 @NgModule({
     imports: [
-      FormsModule,
-      BrowserModule,
-      ReactiveFormsModule,
-      HttpClientModule,
-      BrowserAnimationsModule,
+        FormsModule,
+        BrowserModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        FontAwesomeModule,
         RouterModule.forRoot(
             appRoutes // ,
             // { enableTracing: true } // <-- debugging purposes only
@@ -78,14 +80,13 @@ registerLocaleData(localeSv);
         })
     ],
     declarations: [
-      AppComponent,
-      HomeComponent,
-      LoginComponent,
-      DocumentlistComponent,
-      AppLayoutComponent,
-      FileViewComponent,
-      AdminComponent,
-
+        AppComponent,
+        HomeComponent,
+        LoginComponent,
+        DocumentlistComponent,
+        AppLayoutComponent,
+        FileViewComponent,
+        AdminComponent,
     ],
     providers: [
         PreviewService,

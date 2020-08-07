@@ -41,7 +41,7 @@ describe('DocumentlistComponent', () => {
     fixture = TestBed.createComponent(DocumentlistComponent);
     documentListService = TestBed.get(DocumentListService);
     component = fixture.componentInstance;
-    spyOn(documentListService, 'loadFolderByNodeId').and.returnValue(of([]));
+    // spyOn(documentListService, 'loadFolderByNodeId').and.returnValue(of([]));
 
     fixture.detectChanges();
   });

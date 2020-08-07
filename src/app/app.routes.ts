@@ -34,8 +34,15 @@ export const appRoutes: Routes = [
       {
         path: 'documentlist',
         component: DocumentlistComponent,
-        canActivate: [AuthGuardEcm]
+        // canActivate: [AuthGuardEcm]
+        canActivate: [AuthGuard]
       },
+      // {
+      //   path: 'file-view',
+      //   component: FileViewComponent,
+      //   // canActivate: [AuthGuardEcm]
+      //   canActivate: [AuthGuard]
+      // },
     ]
   },
   {
