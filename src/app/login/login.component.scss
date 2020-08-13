@@ -189,34 +189,6 @@ input {
   }
 }
 
-#login-btn {
-  width: 100%;
-  height: 3.214em;
-  padding: 12px 35px;
-  background: linear-gradient(to right, #b2da95, #59c322);
-  color: $white;
-  font-size: 1em;
-  font-weight: bold;
-  border-radius: 3px;
-  border: none !important;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-#login-btn:disabled,
-#login-btn[disabled]:hover {
-  color: #ffffff;
-  background-color: $medium-grey;
-  border: none;
-}
-
-#login-btn:hover,
-#login-btn:focus,
-#login-btn:active {
-  background: $main-purple-50;
-  color: $white;
-}
-
 label {
   font-size: .9em;
 }
