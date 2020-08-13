@@ -59,16 +59,16 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.error = error;
-          this.loading = false;
-        });
+    // this.authenticationService.login(this.f.username.value, this.f.password.value)
+    //   .pipe(first())
+    //   .subscribe(
+    //     data => {
+    //       this.router.navigate([this.returnUrl]);
+    //     },
+    //     error => {
+    //       this.error = error;
+    //       this.loading = false;
+    //     });
   }
 
   persistingSignIn(target) {
@@ -81,5 +81,28 @@ export class LoginComponent implements OnInit {
   forgotPassword() {
     alert('We will do something about forgotten password')
     // handle forgotten password
+  }
+
+  foo() {
+    this.authenticationService.linkingLogin().subscribe(response => {
+      // console.log('response');
+      // console.log(response);
+      setTimeout(() => {
+        this.bar(response);
+      }, 3000);
+    });
+  }
+  bar(user) {
+    this.authenticationService.getRoles().subscribe(x => {
+      console.log('roles');
+      console.log(x);
+    });
+    this.foobar(user);
+  }
+  foobar(user) {
+    this.authenticationService.queryForCreds(user).subscribe(x => {
+      console.log('queryForCreds');
+      console.log(x);
+    });
   }
 }

@@ -84,4 +84,11 @@ export class AppLayoutComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  login() {
+    this.authenticationService.linkingLogin().subscribe(response => {
+      // console.log('response');
+      // console.log(response);
+    });
+  }
+
 }
