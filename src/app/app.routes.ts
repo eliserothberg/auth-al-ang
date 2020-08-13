@@ -35,7 +35,12 @@ export const appRoutes: Routes = [
       {
         path: 'documentlist',
         component: DocumentlistComponent,
-        canActivate: [AuthGuardEcm]
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'file-view',
+        component: FileViewComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'datatable',

@@ -34,6 +34,7 @@
     "@angular/router": "10.0.4",
     "@fortawesome/angular-fontawesome": "^0.7.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@mat-datetimepicker/core": "4.1.0",
     "@mat-datetimepicker/moment": "4.1.0",
@@ -68,8 +69,8 @@
     "@angular/cli": "^10.0.4",
     "@angular/compiler-cli": "10.0.4",
     "@angular/language-service": "10.0.7",
-    "@types/hammerjs": "2.0.35",
     "@types/event-emitter": "^0.3.3",
+    "@types/hammerjs": "2.0.35",
     "@types/jasmine": "3.5.11",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^14.0.27",
@@ -85,13 +86,14 @@
     "karma-jasmine": "^3.3.1",
     "karma-jasmine-html-reporter": "^1.5.4",
     "ng-packagr": "^10.0.3",
+    "node-sass": "^4.13.0",
     "protractor": "^7.0.0",
     "protractor-smartrunner": "^0.1.1",
-    "node-sass": "^4.13.0",
     "puppeteer": "5.2.1",
     "ts-node": "^8.0.3",
     "tslib": "^1.9.0",
     "tslint": "^5.20.1",
-    "typescript": "3.9.7"
+    "typescript": "3.9.7",
+    "wait-on": "^5.1.0"
   }
 }

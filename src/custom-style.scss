@@ -2,11 +2,12 @@
 @import '~@alfresco/adf-core/theming';
 
 @import '~@angular/material/theming';
+@import 'colors';
 
-@include mat-core($alfresco-typography);
+@include mat-core();
 
-$primary: mat-palette($alfresco-accent-purple);
-$accent:  mat-palette($alfresco-accent-purple);
+$primary: mat-palette($primary-color);
+$accent:  mat-palette($secondary-color);
 $warn:    mat-palette($alfresco-warn);
 $theme:   mat-light-theme($primary, $accent, $warn);
 
@@ -51,11 +52,12 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 body {
     overflow: auto;
     font-family: Montserrat, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f2edf3;
 }
 
-.adf-background-color {
-    margin: 0;
-    //background-color: rgba(94, 80, 249, 0.05);
+.adf-container-full-width {
+    background-color: #f2edf3;
 }
 
 button:focus,
@@ -63,6 +65,34 @@ input:focus {
     outline: none;
 }
 
+.tooltip {
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    position: absolute;
+    color: white;
+    background-color: blue;
+    padding: 20px;
+    z-index: 1000;
+    max-width: 250px;
+    overflow: visible;
+}
+
+.greenTooltip {
+    background-color: green;
+    border-radius: 20px;
+}
+
+.redTooltip {
+    background-color: red;
+    //top: 100px;
+    //left: 400px;
+}
+
+.purpleTooltip {
+    background-color: $main-purple-25;
+    color: black;
+    padding: 30px 10px;
+}
 .basic-container {
     padding: 40px;
 }
@@ -129,7 +159,7 @@ input[type="checkbox" i] {
 .primary-btn {
     height: 3.214em;
     padding: 12px 35px;
-    background: linear-gradient(to right, #9a55ff, $blue);
+    background: linear-gradient(to right, #9a55ff, $main-purple);
     color: $white;
     font-size: 1em;
     font-family: Montserrat, Helvetica, Arial, sans-serif;
@@ -172,7 +202,7 @@ input[type="checkbox" i] {
 .p-text-link-dark:active,
 .p-text-link:hover,
 .p-text-link:active {
-    color: $blue-half-tone;
+    color: $main-purple-50;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -191,6 +221,12 @@ input[type="checkbox" i] {
     height: 45px;
 }
 
+.tooltip-icon {
+    color: #b66dff;
+    font-size: 14px;
+    margin: 3px 0 0 3px;
+}
+
 .margin-top-10 {
     margin-top: 10px;
 }
@@ -201,4 +237,12 @@ input[type="checkbox" i] {
 
 .padding-left-5 {
     padding-left: 5px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

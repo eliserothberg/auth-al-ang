@@ -1,28 +1,93 @@
 ////////// COLOR SYSTEM //////////
 
-$blue:              #5E50F9;
-$indigo:            #6610f2;
-$purple:            #6a008a;
-$pink:              #E91E63;
-$red:               #f96868;
-$orange:            #f2a654;
-$yellow:            #f6e84e;
-$green:             #46c35f;
-$teal:              #58d8a3;
-$cyan:              #57c7d4;
-$black:             #000;
-$white:             #ffffff;
-$white-smoke:       #f2f7f8;
-$violet:            #41478a;
-$darkslategray :    #2e383e;
-$dodger-blue :      #3498db;
-$medium-grey:       #9A9A9A;
-$blue-half-tone: rgba(94, 80, 249, 0.5);
-$blue-quarter-tone: rgba(94, 80, 249, 0.25);
+$main-purple:           #5E50F9;
+$indigo:                #6610f2;
+$purple:                #6a008a;
+$pink:                  #E91E63;
+$red:                   #f96868;
+$orange:                #f2a654;
+$yellow:                #f6e84e;
+$green:                 #46c35f;
+$teal:                  #58d8a3;
+$cyan:                  #57c7d4;
+$black:                 #000;
+$white:                 #ffffff;
+$white-smoke:           #f2f7f8;
+$violet:                #41478a;
+$darkslategray:         #2e383e;
+$dodger-blue:           #3498db;
+$medium-grey:           #9A9A9A;
+$main-purple-50:        rgba(94, 80, 249, 0.5);
+$main-purple-25:        rgba(94, 80, 249, 0.25);
 
+$primary-color: (
+        50: #ece6fe,
+        100: #ece6fe,
+        200: #cdc2fb,
+        300: #aa9afa,
+        400: #8370fa,
+        500: #5E50F9,
+        600: #2330f7,
+        700: #002cf0,
+        800: #0025e8,
+        900: #0020e3,
+        A100: #e5c3fc,
+        A200: #d49bfc,
+        A400: #b350f9,
+        A700: #762ce7,
+        contrast: (
+                50: rgba(0, 0, 0, 0.87),
+                100: rgba(0, 0, 0, 0.87),
+                200: rgba(0, 0, 0, 0.87),
+                300: rgba(0, 0, 0, 0.87),
+                400: rgba(0, 0, 0, 0.87),
+                500: white,
+                600: white,
+                700: white,
+                800: rgba(255, 255, 255, 0.87),
+                900: rgba(255, 255, 255, 0.87),
+                A100: rgba(0, 0, 0, 0.87),
+                A200: white,
+                A400: white,
+                A700: white,
+        )
+);
+
+$secondary-color: (
+        50: #f2edf3,
+        100: #d0edc1,
+        200: #b1e198,
+        300: #8fd56d,
+        400: #74cc4a,
+        500: #58c322,
+        600: #48b31a,
+        700: #2e9f0d,
+        800: #058b00,
+        900: #006900,
+        A100: #c6edc7,
+        A200: #a0e2a3,
+        A400: #51cd5d,
+        A700: #00a027,
+        contrast: (
+                50: rgba(0, 0, 0, 0.87),
+                100: rgba(0, 0, 0, 0.87),
+                200: rgba(0, 0, 0, 0.87),
+                300: rgba(0, 0, 0, 0.87),
+                400: rgba(0, 0, 0, 0.87),
+                500: white,
+                600: white,
+                700: white,
+                800: rgba(255, 255, 255, 0.87),
+                900: rgba(255, 255, 255, 0.87),
+                A100: rgba(0, 0, 0, 0.87),
+                A200: white,
+                A400: white,
+                A700: white,
+        )
+);
 
 $colors: (
-        blue:             $blue,
+        blue:             #0000FF,
         indigo:           $indigo,
         purple:           $purple,
         pink:             $pink,
@@ -40,6 +105,30 @@ $colors: (
         gray-dark:        #0f1531,
         black:            #000000
 );
+
+//{
+//        --blue: #007bff;
+//        --indigo: #6610f2;
+//        --purple: #6f42c1;
+//        --pink: #e83e8c;
+//        --red: #dc3545;
+//        --orange: #fd7e14;
+//        --yellow: #ffc107;
+//        --green: #28a745;
+//        --teal: #20c997;
+//        --cyan: #17a2b8;
+//        --white: #fff;
+//        --gray: #6c757d;
+//        --gray-dark: #343a40;
+//        --primary: #007bff;
+//        --secondary: #6c757d;
+//        --success: #28a745;
+//        --info: #17a2b8;
+//        --warning: #ffc107;
+//        --danger: #dc3545;
+//        --light: #f8f9fa;
+//        --dark: #343a40;
+//}
 
 
 $theme-colors: (
