@@ -78,15 +78,15 @@ autofill:hover,
 }
 
 #Login-logo-box {
-  margin-top: 10vh;
+  margin-top: 8vh;
   height: 250px;
 }
 
 #login-logo {
-  background-image: url('../../assets/images/instream-white-bg.png');
+  background-image: url('../../assets/images/temp-logo-text.png');
   background-repeat: no-repeat;
   background-position: center;
-  height: 175px;
+  height: 195px;
   background-size: 55%;
 }
 
@@ -112,7 +112,7 @@ autofill:hover,
 
 .footer-logo {
   width: auto;
-  height: 25px;
+  height: 35px;
 }
 
 #login-sidebar {
@@ -187,34 +187,6 @@ input {
   @media screen and (min-width: 370px) {
     padding: 10px;
   }
-}
-
-#login-btn {
-  width: 100%;
-  height: 3.214em;
-  padding: 12px 35px;
-  background: linear-gradient(to right, #b2da95, #59c322);
-  color: $white;
-  font-size: 1em;
-  font-weight: bold;
-  border-radius: 3px;
-  border: none !important;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-#login-btn:disabled,
-#login-btn[disabled]:hover {
-  color: #ffffff;
-  background-color: $medium-grey;
-  border: none;
-}
-
-#login-btn:hover,
-#login-btn:focus,
-#login-btn:active {
-  background: $main-purple-50;
-  color: $white;
 }
 
 label {

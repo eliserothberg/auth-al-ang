@@ -1,3 +1,25 @@
 .adf-viewer__sidebar {
     width: 380px !important;
 }
+
+.width-adjust {
+    padding: 10px;
+    width: 98%;
+
+
+    @media screen and (min-width: 420px){
+        padding: 20px;
+        width: 80%;
+    }
+    @media screen and (min-width: 780px){
+        padding: 40px;
+    }
+    //@media screen and (min-width: 924px){
+    //    width: 70%;
+    //    padding: 40px;
+    //}
+    //@media screen and (min-width: 970px){
+    //    width: 80%;
+    //    padding: 40px;
+    //}
+}

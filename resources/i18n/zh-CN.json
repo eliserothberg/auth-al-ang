@@ -213,7 +213,7 @@
     "NODE_LIST": "标签列表（按节点 ID 排序）"
   },
   "DEMO_PERMISSION": {
-    "INHERIT_PERMISSION_BUTTON": "继承权限",
+    "INHERIT_PERMISSION_<BUTTON": "继承权限",
     "INHERITED_PERMISSIONS_BUTTON": "已继承权限"
   },
   "TASK_LIST_DEMO": {

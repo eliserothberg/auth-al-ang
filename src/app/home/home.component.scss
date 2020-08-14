@@ -1,0 +1,27 @@
+.content {
+  padding: 10px;
+  max-width: 99%;
+}
+
+mat-card {
+  width: 280px;
+  min-height: 400px;
+  padding: 24px;
+}
+
+.mat-card-header-text {
+  margin: 0 16px 0 0;
+}
+
+.search-card {
+  padding: 5px 0 10px 0;
+}
+
+#card-flex {
+  justify-content: space-between;
+  .primary-btn {
+    padding: 5px 7px;
+    height: 32px;
+    font-size: 11px;
+  }
+}

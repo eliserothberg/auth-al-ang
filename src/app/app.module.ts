@@ -43,6 +43,8 @@ import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
 import { TooltipDirective } from './_directives/tooltip.directive';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatBadgeModule} from '@angular/material/badge';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -70,6 +72,8 @@ registerLocaleData(localeSv);
         HttpClientModule,
         FontAwesomeModule,
         BrowserAnimationsModule,
+        FlexLayoutModule,
+        MatBadgeModule,
         RouterModule.forRoot(
             appRoutes // ,
             // { enableTracing: true } // <-- debugging purposes only

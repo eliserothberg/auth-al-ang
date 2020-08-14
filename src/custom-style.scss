@@ -65,6 +65,34 @@ input:focus {
     outline: none;
 }
 
+.mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 2px 0 12px 10px;
+}
+
+.adf-app-layout-toolbar {
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.mat-badge-small.mat-badge-above .mat-badge-content {
+    left: 13px;
+    top: -7px;
+}
+
+.mat-menu-panel {
+    min-width: 150px !important;
+    margin-top: 8px;
+}
+
 .tooltip {
     display: inline-block;
     border-bottom: 1px dotted black;
@@ -94,7 +122,16 @@ input:focus {
     padding: 30px 10px;
 }
 .basic-container {
-    padding: 40px;
+    padding: 5px;
+    @media screen and (min-width: 420px){
+        padding: 10px;
+    }
+    @media screen and (min-width: 640px){
+        padding: 20px;
+    }
+    @media screen and (min-width: 900px){
+        padding: 40px;
+    }
 }
 .flex {
     display: flex;
@@ -156,31 +193,48 @@ input[type="checkbox" i] {
     margin: 10px 5px 0 0;
 }
 
-.primary-btn {
+.primary-btn,
+.secondary-btn {
     height: 3.214em;
     padding: 12px 35px;
-    background: linear-gradient(to right, #9a55ff, $main-purple);
     color: $white;
     font-size: 1em;
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
-    font-weight: bold;
     border-radius: 3px;
     border: none !important;
     cursor: pointer;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: bold;
 }
 
-.primary-btn:disabled,
-.primary-btn[disabled]:hover {
-    color: #ffffff;
-    background-color: $medium-grey;
-    border: none;
+.primary-btn {
+    background: linear-gradient(to right, #b2da95, #59c322);
+    text-transform: uppercase;
+}
+.secondary-btn {
+    background: linear-gradient(to right, #9a55ff, $main-purple);
 }
 
 .primary-btn:hover,
 .primary-btn:focus,
 .primary-btn:active {
+    background: #3b8116;
+    color: $white;
+}
+
+.secondary-btn:hover,
+.secondary-btn:focus,
+.secondary-btn:active {
     background: $violet;
     color: $white;
+}
+
+.primary-btn:disabled,
+.primary-btn[disabled]:hover,
+.secondary-btn:disabled,
+.secondary-btn[disabled]:hover{
+    color: #ffffff;
+    background-color: $medium-grey;
+    border: none;
 }
 
 .p-text-link {
@@ -239,10 +293,27 @@ input[type="checkbox" i] {
     padding-left: 5px;
 }
 
+.padding-right-10 {
+    padding-right: 10px;
+}
+
 .text-right {
     text-align: right;
 }
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.content {
+    .mat-card-header-text {
+        margin: 0 16px 0 0;
+    }
+    .mat-card-header .mat-card-title {
+        margin-bottom: 25px;
+    }
 }
