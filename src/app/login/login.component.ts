@@ -85,11 +85,9 @@ export class LoginComponent implements OnInit {
 
   foo() {
     this.authenticationService.linkingLogin().subscribe(response => {
-      // console.log('response');
-      // console.log(response);
-      setTimeout(() => {
-        this.bar(response);
-      }, 3000);
+      console.log('response');
+      console.log(response);
+        this.foobar(response);
     });
   }
   bar(user) {
