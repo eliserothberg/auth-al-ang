@@ -26,6 +26,7 @@
               "src/favicon-96x96.png",
               "src/app.config.json",
               "src/assets/adf-content-services/i18n",
+              "src/resources/i18n",
               {
                 "glob": "**/*",
                 "input": "resources",
@@ -59,7 +60,7 @@
             ],
             "styles": [
               "src/custom-style.scss",
-              "src/colors.scss",
+              "src/colors.scss"
             ],
             "scripts": [
               "node_modules/pdfjs-dist/build/pdf.js",

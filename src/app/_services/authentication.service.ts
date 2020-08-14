@@ -47,8 +47,8 @@ export class AuthenticationService {
         headers = headers
             .set('Access-Control-Allow-Origin', '*');
 
-        this.tokenResponse.Key = '5f33f596e34806431a7843e5';
-        this.tokenResponse.Secret = 'NWYzM2Y1OTZlMzQ4MDY0MzFhNzg0M2U0';
+        // this.tokenResponse.Key = '5f33f596e34806431a7843e5';
+        // this.tokenResponse.Secret = 'NWYzM2Y1OTZlMzQ4MDY0MzFhNzg0M2U0';
             const body = {
             // 'key': this.tokenResponse.Key,
             // 'secret': this.tokenResponse.Secret
@@ -57,7 +57,7 @@ export class AuthenticationService {
                 // '__RequestVerificationToken': 'CfDJ8CpCa4gtrGNHkDQi53lIBLj3lW9LIkGphmRrRiGvqoLszuAnW0BywbWGAFWCwsYlPYT_bkBPuloaMzX9sPBU5xeqraeJomYL46L27cEoXrjuuYUdMuDsJg3bjGZDRfd8yyDBGGmM6RtyOHeqwchXcRk'
                 '__RequestVerificationToken': ''
         };
-        return this.http.post<any>(`https://9bc8690153ec.ngrok.io/Account/Login`, body, {headers: headers})
+        return this.http.post<any>(`https://9bc8690153ec.ngrok.io/account/login`, body)
             .pipe(map(response => {
                 // login successful if there's a jwt token in the response
                 // if (response && response.access_token) {
@@ -105,7 +105,7 @@ export class AuthenticationService {
         // }
         // console.log('body');
         // console.log(body);
-        return this.http.post<any>(`https://9bc8690153ec.ngrok.io/token`, body )
+        return this.http.post<any>(`https://9bc8690153ec.ngrok.io/Token/Refresh`, body )
             .pipe(map(x => {
                 console.log('next step');
                 console.log(x);
