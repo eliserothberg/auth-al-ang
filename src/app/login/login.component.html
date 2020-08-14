@@ -3,15 +3,15 @@
     <section>
       <div id="login-section">
         <div id="login-logo-box">
-          <button (click)="foo()">xxxxx</button>
 
           <div id="login-logo"></div>
         </div>
-        <h1 *ngIf="!error" class="margin-top-20">Welcome!</h1>
+        <h1 *ngIf="!error">Welcome!</h1>
         <div *ngIf="error" class="invalid-feedback margin-top-20">{{error}}</div>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div>
             <label for="username" class="form-label">Username</label>
+            <button (click)="foo()">xxxxx</button>
 
             <div>
               <fa-icon class="form-icon" [icon]="userIcon"></fa-icon>

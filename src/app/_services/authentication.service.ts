@@ -27,37 +27,37 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
-        // return this.http.post<any>(`http://localhost:4000/users/authenticate`, { username, password })
-        //     .pipe(map(user => {
-        //         // login successful if there's a jwt token in the response
-        //         if (user && user.token) {
-        //             // store user details and jwt token in local storage to keep user logged in between page refreshes
-        //             localStorage.setItem('currentUser', JSON.stringify(user));
-        //             localStorage.setItem('tokenResponse', JSON.stringify(user));
-        //
-        //             // this.currentUserSubject.next(user);
-        //         }
-        //         return user;
-        //     }));
+        return this.http.post<any>(`http://localhost:4000/users/authenticate`, { username, password })
+            .pipe(map(user => {
+                // login successful if there's a jwt token in the response
+                if (user && user.token) {
+                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem('tokenResponse', JSON.stringify(user));
+
+                    this.currentUserSubject.next(user);
+                }
+                return user;
+            }));
     }
 
     linkingLogin() {
 
-        let headers = new HttpHeaders();
-        headers = headers
-            .set('Access-Control-Allow-Origin', '*');
-
-        // this.tokenResponse.Key = '5f33f596e34806431a7843e5';
+        // let headers = new HttpHeaders();
+        // headers = headers
+        //     .set('Access-Control-Allow-Origin', '*');
+        //
+        // // this.tokenResponse.Key = '5f33f596e34806431a7843e5';
         // this.tokenResponse.Secret = 'NWYzM2Y1OTZlMzQ4MDY0MzFhNzg0M2U0';
             const body = {
             // 'key': this.tokenResponse.Key,
             // 'secret': this.tokenResponse.Secret
-                'UserId': '424f2262-1ef9-4f40-83e6-126ebbb0e909',
-                'Password': '',
+                "UserId": "424f2262-1ef9-4f40-83e6-126ebbb0e909",
+                "Password": ""
                 // '__RequestVerificationToken': 'CfDJ8CpCa4gtrGNHkDQi53lIBLj3lW9LIkGphmRrRiGvqoLszuAnW0BywbWGAFWCwsYlPYT_bkBPuloaMzX9sPBU5xeqraeJomYL46L27cEoXrjuuYUdMuDsJg3bjGZDRfd8yyDBGGmM6RtyOHeqwchXcRk'
-                '__RequestVerificationToken': ''
+                // '__RequestVerificationToken': ''
         };
-        return this.http.post<any>(`https://9bc8690153ec.ngrok.io/account/login`, body)
+        return this.http.post<any>(`https://60fe65f86d13.ngrok.io/account/login`, body)
             .pipe(map(response => {
                 // login successful if there's a jwt token in the response
                 // if (response && response.access_token) {
@@ -96,7 +96,8 @@ export class AuthenticationService {
     .set('Accept', 'application/json, odata=verbose, charset=utf-8');
 
         const body = {
-            'refresh_token': response.refresh_token
+            'refresh_token': response.refresh_token,
+            'access_token': response.access_token
         };
 
         // const body = {
@@ -105,7 +106,7 @@ export class AuthenticationService {
         // }
         // console.log('body');
         // console.log(body);
-        return this.http.post<any>(`https://9bc8690153ec.ngrok.io/Token/Refresh`, body )
+        return this.http.post<any>(`https://60fe65f86d13.ngrok.io/Token/Refresh`, body )
             .pipe(map(x => {
                 console.log('next step');
                 console.log(x);
