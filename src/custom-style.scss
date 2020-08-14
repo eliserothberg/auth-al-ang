@@ -88,6 +88,11 @@ input:focus {
     top: -7px;
 }
 
+.mat-menu-panel {
+    min-width: 150px !important;
+    margin-top: 8px;
+}
+
 .tooltip {
     display: inline-block;
     border-bottom: 1px dotted black;

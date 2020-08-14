@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthenticationService, UserService} from '../_services';
 import {Router} from '@angular/router';
 import {MenuItem} from '../_models/menuItem.model';
-import {faFeatherAlt, faHandsWash, faHome, faMugHot, faSearch, faShoePrints} from '@fortawesome/free-solid-svg-icons';
+import {faChevronDown, faFeatherAlt, faHandsWash, faHome, faMugHot, faSearch, faShoePrints} from '@fortawesome/free-solid-svg-icons';
 import {first} from 'rxjs/operators';
 import {User} from '../_models';
 
@@ -10,15 +10,16 @@ import {User} from '../_models';
   selector: 'app-root',
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss'],
-  // encapsulation: ViewEncapsulation.None
 })
 export class AppLayoutComponent implements OnInit {
   users: User[] = [];
   public currentUser: User;
   printIcon = faShoePrints;
-  searchIcon = faSearch;
+  angleDownIcon = faChevronDown;
+
   currentMenuItem = new MenuItem();
   value: string;
+  initials: string;
   mainMenuItems: MenuItem[] = [
     {
       path: '/admin',
@@ -68,14 +69,15 @@ export class AppLayoutComponent implements OnInit {
     this.userService.getAll().pipe(first()).subscribe(users => {
       this.users = users;
     });
+    this.initials = this.currentUser.firstName.charAt(0) + this.currentUser.lastName.charAt(0);
   }
 
   searchInput(event) {
     console.log(event);
   }
 
-  chooseSecondaryNav(menuItem: MenuItem) {
-    console.log(menuItem)
+  chooseSideNav(menuItem: MenuItem) {
+    console.log(menuItem);
     this.currentMenuItem = menuItem;
   }
 

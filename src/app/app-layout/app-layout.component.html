@@ -15,17 +15,22 @@
                         <input class="search-input" matInput placeholder="Global Search">
                     </mat-form-field>
                 </div>
-                <div id="nav-right">
-                    <mat-icon matTooltip="Doing Something" [matTooltipClass]="{ 'tool-tip': true } "class="cursor-pointer">thumb_up</mat-icon>
-                    <mat-icon customTooltip matBadge="5" matBadgeColor="accent" matBadgeSize="small" addStyle="purpleTooltip" position="leftBottom" toolTip="I am positioned left- bottom and am semi-transparent" class="cursor-pointer">notifications</mat-icon>
-                    <span class="cdk-visually-hidden">Example with a home icon with overlaid badge showing the number 15</span>
-                    <mat-icon customTooltip addStyle="greenTooltip" position="centerBottom" toolTip="I am positioned centered bottom and have rounded edges" class="cursor-pointer">business_center</mat-icon>
-                    <mat-icon [matMenuTriggerFor]="logoutMenu" class="cursor-pointer">login</mat-icon>
-                    <mat-menu #logoutMenu="matMenu">
-                        <button mat-menu-item (click)="logout()"><mat-icon>login</mat-icon> &nbsp; Log Out</button>
-                        <button mat-menu-item>Item 2</button>
-                    </mat-menu>
-                </div>
+                <ul id="nav-right">
+                    <li [matMenuTriggerFor]="logoutMenu" class="avatar-group">
+                        <div id="nav-avatar">{{initials}}</div>
+                        <div id="avatar-name">{{currentUser.firstName}} {{currentUser.lastName}}</div>
+                        <div id="angle-wrap"><span id="angle-icon"></span></div>
+                    </li>
+                    <li><mat-icon matTooltip="Doing Something" [matTooltipClass]="{ 'tool-tip': true } "class="cursor-pointer">thumb_up</mat-icon></li>
+                   <li><mat-icon customTooltip matBadge="5" matBadgeColor="accent" matBadgeSize="small" addStyle="purpleTooltip" position="leftBottom" toolTip="I am positioned left- bottom and am semi-transparent" class="cursor-pointer">notifications</mat-icon>
+                    <span class="cdk-visually-hidden">Example with a home icon with overlaid badge showing the number 15</span></li>
+                    <li><mat-icon customTooltip addStyle="greenTooltip" position="centerBottom" toolTip="I am positioned centered bottom and have rounded edges" class="cursor-pointer">business_center</mat-icon></li>
+                    <li><mat-icon class="cursor-pointer">login</mat-icon></li>
+                </ul>
+                <mat-menu #logoutMenu="matMenu">
+                    <button mat-menu-item (click)="logout()"><mat-icon>login</mat-icon>Log Out</button>
+                    <button mat-menu-item><mat-icon>pets</mat-icon>Item 2</button>
+                </mat-menu>
             </mat-toolbar>
         </ng-template>
 
@@ -40,18 +45,18 @@
                        [style.position]="'relative'"
                        routerLinkActive="selected"
                        [routerLink]="[menuItem.path]"
-                       (click)="chooseSecondaryNav(menuItem)">
+                       (click)="chooseSideNav(menuItem)">
                         <span *ngIf="!isMenuMinimized()" class="sidenav-menu-label">{{menuItem.title}}</span>
-                        <fa-icon class="nav-icon" [icon]="menuItem.icon"></fa-icon>
+                        <fa-icon class="sidenav-icon" [icon]="menuItem.icon"></fa-icon>
                         <br>
                     </a>
                 </ng-container>
                 <a *ngIf="currentUser.username === 'admin'"
                    mat-ripple class="sidenav-link"
                    routerLink="/admin"
-                   (click)="chooseSecondaryNav(mainMenuItems[0])">
+                   (click)="chooseSideNav(mainMenuItems[0])">
                     <div class="sidenav-menu-label" *ngIf="!isMenuMinimized()">Admin</div>
-                    <fa-icon class="nav-icon" [icon]="printIcon"></fa-icon>
+                    <fa-icon class="sidenav-icon" [icon]="printIcon"></fa-icon>
                 </a>
             </mat-nav-list>
         </ng-template>
