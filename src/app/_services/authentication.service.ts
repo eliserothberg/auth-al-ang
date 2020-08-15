@@ -43,17 +43,19 @@ export class AuthenticationService {
 
     linkingLogin() {
 
-        // let headers = new HttpHeaders();
-        // headers = headers
-        //     .set('Access-Control-Allow-Origin', '*');
-        //
+        let headers = new HttpHeaders();
+        headers = headers
+            .set('Access-Control-Allow-Origin', '*')
+            .set('Content-Type', 'application/json; charset=utf-8')
+            .set('Cache-Control', 'no-cache');
+
         // // this.tokenResponse.Key = '5f33f596e34806431a7843e5';
         // this.tokenResponse.Secret = 'NWYzM2Y1OTZlMzQ4MDY0MzFhNzg0M2U0';
             const body = {
             // 'key': this.tokenResponse.Key,
             // 'secret': this.tokenResponse.Secret
-                "UserId": "424f2262-1ef9-4f40-83e6-126ebbb0e909",
-                "Password": ""
+                'UserId': '424f2262-1ef9-4f40-83e6-126ebbb0e909',
+                'Password': ''
                 // '__RequestVerificationToken': 'CfDJ8CpCa4gtrGNHkDQi53lIBLj3lW9LIkGphmRrRiGvqoLszuAnW0BywbWGAFWCwsYlPYT_bkBPuloaMzX9sPBU5xeqraeJomYL46L27cEoXrjuuYUdMuDsJg3bjGZDRfd8yyDBGGmM6RtyOHeqwchXcRk'
                 // '__RequestVerificationToken': ''
         };
